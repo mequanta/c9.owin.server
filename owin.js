@@ -23,7 +23,7 @@ function main(options, imports, register) {
         if (typeof req.body === 'object') {
             req.body = new Buffer(querystring.stringify(req.body));
         }
-        owin(__dirname + '/bin/owin.server.dll')(req, res, next);
+        owin(options.dllPath)(req, res, next);
     });
 
     register(null, {
