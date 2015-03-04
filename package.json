@@ -1,0 +1,8 @@
+{
+  "name": "c9.owin.server",
+  "version": "0.1.0",
+  "author": "MeQuanta <mso@mequanta.com>",
+  "dependencies": {
+    "connect-owin": "~0.3.0"
+  }
+}
