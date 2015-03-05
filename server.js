@@ -3,17 +3,11 @@
 main.consumes = [
     "connect.static", "api"
 ];
-main.provides = ["owin"];
+main.provides = [];
 
 module.exports = main;
 
 function main(options, imports, register) {
-    var statics = imports["connect.static"];
-    statics.addStatics([{
-        path: __dirname + "/static",
-        mount: "/lib/owin"
-    }]);
-
     var querystring = require("querystring");
     var api = imports.api;
     var owin = require("connect-owin");
@@ -25,8 +19,5 @@ function main(options, imports, register) {
         }
         owin(options.dllPath)(req, res, next);
     });
-
-    register(null, {
-        "owin": owin
-    });
+    register(null, {});
 }
